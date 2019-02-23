@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+	{% if title %}
+		<title>Champ Recommender: {{ title }}</title>
+	{% else %}
+		<title>Champ Recommender</title>
+	{% endif %}
+</head>
+<body style="height: 100%; position: relative; background-image:url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg); background-repeat:no-repeat; background-size:cover; background-position:center">
+	<header class="site-header">
+	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+	    <div class="container">
+	      <a class="navbar-brand mr-4" href="/">League Champion Recommender</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	    </div>
+	  </nav>
+	</header>
+
+	<main role="main" class="container" style="margin:auto">
+	  <div class="row" style="margin:auto">
+	    <div class="col-md-8" style="margin:auto">
+	      {% block content %}{% endblock %}
+	    </div>
+	  </div>
+	</main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<div style="min-height: 500px"></div>
+</body>
+<!-- Footer -->
+<footer class="footer font-small bg-steel mt-5 pt-4" style="color:white">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 px-5" >
+
+          <!-- Content -->
+          <h5 class="text-uppercase">Legal CYA</h5>
+          <p style="Line-Height:1"><small><i>The League Champion Recommender is not affiliated with or endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</i></small></p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+          <!-- Grid column -->
+          <div class="col-md-6 px-5 text-center">
+
+            <!-- Links -->
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://github.com/JabrZer0/lol-champ-recommender">Github</a>
+              </li>
+              <li>
+                <a href="http://na.op.gg/summoner/userName=jabr">op.gg</a>
+              </li>
+              <li>
+                <a href="mailto:leaguechamprecommender@gmail.com">Email Me</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center pb-3">© 2019 JabrZer0
+    </div>
+    <!-- Copyright -->
+</footer>
+</html>

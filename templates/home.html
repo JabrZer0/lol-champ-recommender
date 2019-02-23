@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div style="background:rgba(26,35,35,0.85)">
+		<form class="pt-3 pb-1" method="POST" action="" style="">
+			{{ form.hidden_tag() }}
+			<div class=" col-md-10" style="margin:auto">
+					<div class=" col-md-6 mb-0 py-2" style="float:left">
+						{{ form.sum_name(class="form-control form-control-lg", placeholder=form.sum_name.label.text) }}
+					</div>
+					<div class=" col-md-2 mb-0 py-2" style="float:left;">
+						{{ form.region_id(class="form-control form-control-lg") }}
+					</div>
+			</div>
+			<div class="form-group ml-3 pl-3 py-2" style="float:left">
+				{{ form.submit(class="btn-lg btn-outline-info", style="color:white; border-color:white") }}
+			</div>
+		</form>
+		<div style="clear:both"></div>
+	</div>
+	{% if err %}
+		<div class="pb-4 px-5" style="background-color:rgba(26,35,35,0.85); color:red; text-align:justify">
+			{{err}}
+		</div>
+	{% endif %}
+
+	{% if results %}
+		<div class="pl-3 pb-4" style="background-color:rgba(26,35,35,0.85)">
+
+			<h4 class="pt-2">Highest Affinity</h4>
+			{%for champ in results[0]%} 
+			    <div class="px-2" style="float:left">
+			    	<div>
+			    		<img src="{{ champ[2] }}" height="100" width="100">
+			    	</div>
+			    	<div style="text-align:center">
+			    		<small><b>{{ champ[0] }}:</b> {{ champ[1] }}</small>
+			    	</div>
+			    </div>
+			{%endfor%}
+			<div style="clear:both;"></div>
+
+			<h4 class="pt-3">Lowest Affinity</h4>
+			{%for champ in results[1]%} 
+			    <div class="px-2" style="float:left">
+			    	<div>
+			    		<img src="{{ champ[2] }}" height="100" width="100">
+			    	</div>
+			    	<div style="text-align:center">
+			    		<small><b>{{ champ[0] }}:</b> {{ champ[1] }}</small>
+			    	</div>
+			    </div>
+			{%endfor%}
+			<div style="clear:both;"></div>
+		</div>
+	{% endif %}
+	<div class=" px-3 pb-2 mt-3" style="background-color:rgba(26,35,35,0.85); text-align:justify">
+		<h3 class="pt-3">How It Works</h3>
+		<div class="px-4">
+			Enter your summoner name and region above to generate recommendations for champions to play. The Recommender compares your public summoner profile to thousands of other players and finds people who perform similarly on the champions you play. Then it assumes you'll be good (or bad) at the same champions they are and reports the top and bottom champions.
+			<p class="pt-3"> It doesn't filter out champions you already play or care how often you play a champion. That means that there could be (and and probably will be) champions on your list that you've never played before.</p>
+		</div>
+	</div>
+{% endblock content %}
